@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiro HairStudio | Premium Men's Grooming & Barbershop</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: {
+                DEFAULT: '#D4AF37',
+                dark: '#AA8C2C',
+                light: '#F3E5AB',
+              },
+              darkbg: '#0a0a0a',
+              darkcard: '#141414',
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Montserrat"', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS for Extras -->
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #e5e7eb;
+        overflow-x: hidden;
+      }
+
+      .text-gradient-gold {
+        background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: shine 5s linear infinite;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      .btn-gold {
+        background: linear-gradient(45deg, #aa8c2c, #d4af37);
+        transition: all 0.3s ease;
+      }
+
+      .btn-gold:hover {
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .glass-nav {
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #aa8c2c;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 py-4 glass-nav"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-2">
+            <i class="fa-solid fa-scissors text-gold text-2xl"></i>
+            <span
+              class="font-serif font-bold text-2xl tracking-wider text-white"
+              >HIRO<span class="text-gold">.</span></span
+            >
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#about"
+              class="text-sm font-medium hover:text-gold transition-colors"
+              >Tentang Kami</a
+            >
+            <a
+              href="#services"
+              class="text-sm font-medium hover:text-gold transition-colors"
+              >Layanan</a
+            >
+            <a
+              href="#testimonials"
+              class="text-sm font-medium hover:text-gold transition-colors"
+              >Testimoni</a
+            >
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="btn-gold text-black font-semibold px-6 py-2 rounded-full text-sm"
+            >
+              Booking Sekarang
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-gold hover:text-white focus:outline-none"
+            >
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-darkbg border-t border-gold/20 absolute w-full left-0 top-full pb-4"
+      >
+        <a
+          href="#about"
+          class="block px-6 py-3 text-sm hover:text-gold hover:bg-white/5"
+          >Tentang Kami</a
+        >
+        <a
+          href="#services"
+          class="block px-6 py-3 text-sm hover:text-gold hover:bg-white/5"
+          >Layanan</a
+        >
+        <a
+          href="#testimonials"
+          class="block px-6 py-3 text-sm hover:text-gold hover:bg-white/5"
+          >Testimoni</a
+        >
+        <div class="px-6 pt-3">
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            class="block text-center btn-gold text-black font-semibold px-6 py-2 rounded-full text-sm w-full"
+          >
+            Booking Sekarang
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center pt-20">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop"
+          alt="Barbershop Background"
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-darkbg/90 via-darkbg/70 to-darkbg"
+        ></div>
+      </div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 text-center px-4 max-w-4xl mx-auto"
+        data-aos="zoom-out"
+        data-aos-duration="1000"
+      >
+        <h2
+          class="text-gold uppercase tracking-[0.3em] text-sm md:text-base font-semibold mb-4"
+        >
+          The Art of Men's Grooming
+        </h2>
+        <h1
+          class="font-serif text-5xl md:text-7xl font-bold mb-6 text-white leading-tight"
+        >
+          Gaya Sempurna,<br />
+          <span class="text-gradient-gold">Karakter Pria Sejati.</span>
+        </h1>
+        <p
+          class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed"
+        >
+          Lebih dari sekadar pangkas rambut. Hiro HairStudio menghadirkan ritual
+          grooming premium dengan standar internasional di pusat kota.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            class="btn-gold text-black font-bold px-8 py-4 rounded-full text-lg flex items-center justify-center gap-2"
+          >
+            <i class="fa-brands fa-whatsapp text-xl"></i> Reservasi VIP
+          </a>
+          <a
+            href="#services"
+            class="px-8 py-4 rounded-full text-lg font-medium border border-gold/50 text-gold hover:bg-gold/10 transition-colors"
+          >
+            Lihat Layanan
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- USP / Features Section -->
+    <section
+      id="about"
+      class="py-24 bg-darkbg relative border-b border-white/5"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+            Mengapa Memilih <span class="text-gold">Hiro?</span>
+          </h2>
+          <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Feature 1 -->
+          <div
+            class="bg-darkcard p-8 rounded-2xl border border-white/5 hover:border-gold/30 transition-colors group text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-scissors text-gold text-2xl"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-3">
+              Master Barber
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Dikerjakan oleh kapster profesional berpengalaman lebih dari 10
+              tahun dengan teknik presisi tinggi.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="bg-darkcard p-8 rounded-2xl border border-white/5 hover:border-gold/30 transition-colors group text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+            >
+              <i
+                class="fa-solid fa-martini-glass-citrus text-gold text-2xl"
+              ></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-3">
+              Exclusive Lounge
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Nikmati free premium coffee atau minuman dingin sambil menunggu di
+              ruang tunggu eksklusif kami.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="bg-darkcard p-8 rounded-2xl border border-white/5 hover:border-gold/30 transition-colors group text-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-bottle-droplet text-gold text-2xl"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-3">
+              Produk Internasional
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Kami hanya menggunakan pomade, tonik, dan produk perawatan rambut
+              kelas atas untuk hasil maksimal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-[#050505] relative">
+      <!-- Decoration -->
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-gold/5 blur-[100px] rounded-full"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[100px] rounded-full"
+      ></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <span
+            class="text-gold tracking-widest text-sm uppercase font-semibold"
+            >Menu Kami</span
+          >
+          <h2
+            class="font-serif text-3xl md:text-5xl font-bold text-white mt-2 mb-4"
+          >
+            Layanan Premium
+          </h2>
+          <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Service Item 1 -->
+          <div
+            class="group flex flex-col sm:flex-row justify-between items-center bg-darkcard p-6 rounded-xl border border-white/5 hover:border-gold/50 transition-all duration-300"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <div class="text-center sm:text-left mb-4 sm:mb-0">
+              <h3
+                class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors"
+              >
+                Executive Haircut
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Konsultasi, Cuci, Potong Presisi, Styling & Pijat Ringan
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="hidden sm:block w-12 h-[1px] bg-white/20"></div>
+              <span class="font-serif text-2xl font-bold text-gold"
+                >Rp 150k</span
+              >
+            </div>
+          </div>
+
+          <!-- Service Item 2 -->
+          <div
+            class="group flex flex-col sm:flex-row justify-between items-center bg-darkcard p-6 rounded-xl border border-white/5 hover:border-gold/50 transition-all duration-300"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div class="text-center sm:text-left mb-4 sm:mb-0">
+              <h3
+                class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors"
+              >
+                Royal Hot Towel Shave
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Cukur Kumis/Jenggot dengan Handuk Panas & Aftershave Balm
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="hidden sm:block w-12 h-[1px] bg-white/20"></div>
+              <span class="font-serif text-2xl font-bold text-gold"
+                >Rp 100k</span
+              >
+            </div>
+          </div>
+
+          <!-- Service Item 3 -->
+          <div
+            class="group flex flex-col sm:flex-row justify-between items-center bg-darkcard p-6 rounded-xl border border-white/5 hover:border-gold/50 transition-all duration-300"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            <div class="text-center sm:text-left mb-4 sm:mb-0">
+              <h3
+                class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors"
+              >
+                Gentleman's Coloring
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Pewarnaan Rambut Premium (Hitam Natural / Fashion Color)
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="hidden sm:block w-12 h-[1px] bg-white/20"></div>
+              <span class="font-serif text-2xl font-bold text-gold"
+                >Rp 250k</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-gold hover:text-white transition-colors font-medium border-b border-gold pb-1"
+          >
+            Lihat Menu Lengkap & Paket
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-darkbg border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+            Kata <span class="text-gold">Mereka</span>
+          </h2>
+          <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Review 1 -->
+          <div
+            class="bg-gradient-to-b from-darkcard to-darkbg p-8 rounded-2xl border border-white/10 relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <i
+              class="fa-solid fa-quote-right absolute top-6 right-6 text-gold/20 text-4xl"
+            ></i>
+            <div class="flex text-gold text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 italic mb-6 leading-relaxed">
+              "Barbershop terbaik yang pernah saya kunjungi. Detail potongannya
+              luar biasa, suasananya sangat private dan kopinya enak!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gray-800 rounded-full overflow-hidden border border-gold/30"
+              >
+                <img
+                  src="https://i.pravatar.cc/150?img=11"
+                  alt="Budi"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="text-white font-bold font-serif">Budi Santoso</h4>
+                <p class="text-gold text-xs">Pengusaha</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div
+            class="bg-gradient-to-b from-darkcard to-darkbg p-8 rounded-2xl border border-white/10 relative"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i
+              class="fa-solid fa-quote-right absolute top-6 right-6 text-gold/20 text-4xl"
+            ></i>
+            <div class="flex text-gold text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 italic mb-6 leading-relaxed">
+              "Pelayanannya benar-benar VIP. Hot towel shave-nya bikin rileks
+              banget setelah seharian kerja. Highly recommended!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gray-800 rounded-full overflow-hidden border border-gold/30"
+              >
+                <img
+                  src="https://i.pravatar.cc/150?img=60"
+                  alt="Arif"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="text-white font-bold font-serif">Arif Pratama</h4>
+                <p class="text-gold text-xs">Eksekutif Muda</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div
+            class="bg-gradient-to-b from-darkcard to-darkbg p-8 rounded-2xl border border-white/10 relative"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <i
+              class="fa-solid fa-quote-right absolute top-6 right-6 text-gold/20 text-4xl"
+            ></i>
+            <div class="flex text-gold text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="text-gray-300 italic mb-6 leading-relaxed">
+              "Barbernya ngerti banget model rambut yang cocok sama bentuk wajah
+              saya. Tempatnya bersih dan elegan. Pasti balik lagi."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gray-800 rounded-full overflow-hidden border border-gold/30"
+              >
+                <img
+                  src="https://i.pravatar.cc/150?img=53"
+                  alt="Dimas"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="text-white font-bold font-serif">Dimas Aditya</h4>
+                <p class="text-gold text-xs">Creative Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="bg-[#050505] pt-20 pb-10 border-t border-gold/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16">
+          <!-- Brand -->
+          <div class="md:col-span-5" data-aos="fade-right">
+            <a href="#" class="flex items-center gap-2 mb-6">
+              <i class="fa-solid fa-scissors text-gold text-3xl"></i>
+              <span
+                class="font-serif font-bold text-3xl tracking-wider text-white"
+                >HIRO<span class="text-gold">.</span></span
+              >
+            </a>
+            <p class="text-gray-400 mb-8 max-w-sm leading-relaxed">
+              Destinasi utama grooming pria modern. Memadukan keahlian klasik
+              dengan gaya kontemporer dalam balutan kemewahan.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-darkcard border border-white/10 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-darkcard border border-white/10 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+              >
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-darkcard border border-white/10 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="md:col-span-4" data-aos="fade-up" data-aos-delay="100">
+            <h4 class="font-serif text-xl font-bold text-white mb-6">
+              Lokasi Kami
+            </h4>
+            <ul class="space-y-4 text-gray-400">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot text-gold mt-1"></i>
+                <span
+                  >Jl. Senopati No. 88, Kebayoran Baru,<br />Jakarta Selatan
+                  12110</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-brands fa-whatsapp text-gold"></i>
+                <span>+62 812-3456-7890</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-regular fa-envelope text-gold"></i>
+                <span>hello@hirohairstudio.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hours -->
+          <div class="md:col-span-3" data-aos="fade-left" data-aos-delay="200">
+            <h4 class="font-serif text-xl font-bold text-white mb-6">
+              Jam Operasional
+            </h4>
+            <ul class="space-y-3">
+              <li
+                class="flex justify-between text-gray-400 border-b border-white/5 pb-2"
+              >
+                <span>Senin - Jumat</span>
+                <span class="text-gold">10:00 - 21:00</span>
+              </li>
+              <li
+                class="flex justify-between text-gray-400 border-b border-white/5 pb-2"
+              >
+                <span>Sabtu - Minggu</span>
+                <span class="text-gold">09:00 - 22:00</span>
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="mt-8 block w-full text-center btn-gold text-black font-bold px-6 py-3 rounded-md uppercase tracking-wider text-sm"
+            >
+              Buat Janji Temu
+            </a>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div
+          class="border-t border-white/5 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-gray-500 text-sm">
+            &copy; 2023 Hiro HairStudio. All rights reserved.
+          </p>
+          <div class="text-gray-500 text-sm space-x-4">
+            <a href="#" class="hover:text-gold transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-gold transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom Scripts -->
+    <script>
+      // Initialize AOS animations
+      AOS.init({
+        once: false, // whether animation should happen only once - while scrolling down
+        offset: 100, // offset (in px) from the original trigger point
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease-out-cubic',
+      });
+
+      // Mobile Menu Toggle
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const icon = btn.querySelector('i');
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        if (menu.classList.contains('hidden')) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        }
+      });
+
+      // Close mobile menu on click link
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        });
+      });
+
+      // Navbar Scroll Effect (already dark glass, but can add shadow or border)
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.style.background = 'rgba(5, 5, 5, 0.95)';
+          navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        } else {
+          navbar.style.background = 'rgba(10, 10, 10, 0.8)';
+          navbar.style.boxShadow = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
