@@ -90,6 +90,39 @@
         border-bottom: 1px solid rgba(212, 175, 55, 0.1);
       }
 
+      .service-card {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+          linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(10, 10, 10, 0.25));
+        box-shadow:
+          0 24px 60px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(
+          135deg,
+          rgba(243, 229, 171, 0.35),
+          rgba(212, 175, 55, 0.12),
+          rgba(255, 255, 255, 0.05)
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      .service-row + .service-row {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
@@ -361,87 +394,245 @@
           <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
         </div>
 
-        <div class="space-y-6">
-          <!-- Service Item 1 -->
-          <div
-            class="group flex flex-col sm:flex-row justify-between items-center bg-darkcard p-6 rounded-xl border border-white/5 hover:border-gold/50 transition-all duration-300"
-            data-aos="fade-left"
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <article
+            class="service-card relative overflow-hidden rounded-[28px] p-7 md:p-8"
+            data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="text-center sm:text-left mb-4 sm:mb-0">
-              <h3
-                class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors"
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <p class="text-gold/80 uppercase tracking-[0.35em] text-[11px] mb-2">
+                  Signature
+                </p>
+                <h3 class="font-serif text-2xl md:text-3xl text-white font-bold">
+                  Mens Haircut
+                </h3>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full border border-gold/20 bg-gold/10 flex items-center justify-center text-gold"
               >
-                Executive Haircut
-              </h3>
-              <p class="text-gray-400 text-sm mt-1">
-                Konsultasi, Cuci, Potong Presisi, Styling & Pijat Ringan
-              </p>
+                <i class="fa-solid fa-scissors"></i>
+              </div>
             </div>
-            <div class="flex items-center gap-4">
-              <div class="hidden sm:block w-12 h-[1px] bg-white/20"></div>
-              <span class="font-serif text-2xl font-bold text-gold"
-                >Rp 50.000</span
-              >
-            </div>
-          </div>
 
-          <!-- Service Item 2 -->
-          <div
-            class="group flex flex-col sm:flex-row justify-between items-center bg-darkcard p-6 rounded-xl border border-white/5 hover:border-gold/50 transition-all duration-300"
-            data-aos="fade-left"
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Basic Haircut</h4>
+                <p class="text-sm text-gray-400 mt-1">Haircut, styling</p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">45k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Premium Haircut</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Haircut, hairwash, head massage, styling
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">55k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Hiro&apos;s Signature</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Haircut, hairwash, head & shoulders massage, hairmask, facemask,
+                  styling
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">85k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Dry Shave</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Shaving with electrical shaver
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">10k</span>
+            </div>
+            <div class="service-row pt-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Traditional Shave</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Shaving with traditional shaver
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">30k</span>
+            </div>
+          </article>
+
+          <article
+            class="service-card relative overflow-hidden rounded-[28px] p-7 md:p-8"
+            data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="text-center sm:text-left mb-4 sm:mb-0">
-              <h3
-                class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors"
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <p class="text-gold/80 uppercase tracking-[0.35em] text-[11px] mb-2">
+                  Care Series
+                </p>
+                <h3 class="font-serif text-2xl md:text-3xl text-white font-bold">
+                  Treatment
+                </h3>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full border border-gold/20 bg-gold/10 flex items-center justify-center text-gold"
               >
-                Royal Hot Towel Shave
-              </h3>
-              <p class="text-gray-400 text-sm mt-1">
-                Cukur Kumis/Jenggot dengan Handuk Panas & Aftershave Balm
-              </p>
+                <i class="fa-solid fa-spa"></i>
+              </div>
             </div>
-            <div class="flex items-center gap-4">
-              <div class="hidden sm:block w-12 h-[1px] bg-white/20"></div>
-              <span class="font-serif text-2xl font-bold text-gold"
-                >Rp 75.000</span
-              >
-            </div>
-          </div>
 
-          <!-- Service Item 3 -->
-          <div
-            class="group flex flex-col sm:flex-row justify-between items-center bg-darkcard p-6 rounded-xl border border-white/5 hover:border-gold/50 transition-all duration-300"
-            data-aos="fade-left"
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Creambath</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Anti dandruff cream, cares damaged hair
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">75k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Hairmask</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Color shield mask, collagen repair mask etc
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">65k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Facemask</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Black mask, mud mask, peel off mask etc
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">45k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Hair Keratine</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Strengthen hair and maintaining strong and healthy hair
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">300k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Down Perm</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Perfect treatment for Korean style etc
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">40k</span>
+            </div>
+            <div class="service-row pt-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Perming/Curling</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Hairstyle consisting of waves or curls set into the hair
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">300k</span>
+            </div>
+          </article>
+
+          <article
+            class="service-card relative overflow-hidden rounded-[28px] p-7 md:p-8"
+            data-aos="fade-up"
             data-aos-delay="300"
           >
-            <div class="text-center sm:text-left mb-4 sm:mb-0">
-              <h3
-                class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors"
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <p class="text-gold/80 uppercase tracking-[0.35em] text-[11px] mb-2">
+                  Color Lab
+                </p>
+                <h3 class="font-serif text-2xl md:text-3xl text-white font-bold">
+                  Coloring
+                </h3>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full border border-gold/20 bg-gold/10 flex items-center justify-center text-gold"
               >
-                Gentleman's Coloring
-              </h3>
-              <p class="text-gray-400 text-sm mt-1">
-                Pewarnaan Rambut Premium (Hitam Natural / Fashion Color)
-              </p>
+                <i class="fa-solid fa-droplet"></i>
+              </div>
             </div>
-            <div class="flex items-center gap-4">
-              <div class="hidden sm:block w-12 h-[1px] bg-white/20"></div>
-              <span class="font-serif text-2xl font-bold text-gold"
-                >Rp 150.000</span
+
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Basic Coloring</h4>
+                <p class="text-sm text-gray-400 mt-1">Black, brown, brown</p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">90k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Fashion Coloring</h4>
+                <p class="text-sm text-gray-400 mt-1">
+                  Grey, ash blue, blue etc
+                </p>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">300k</span>
+            </div>
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Hairlight</h4>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">250k</span>
+            </div>
+            <div class="service-row pt-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Bleaching</h4>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">90k</span>
+            </div>
+          </article>
+
+          <article
+            class="service-card relative overflow-hidden rounded-[28px] p-7 md:p-8"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <p class="text-gold/80 uppercase tracking-[0.35em] text-[11px] mb-2">
+                  Essentials
+                </p>
+                <h3 class="font-serif text-2xl md:text-3xl text-white font-bold">
+                  Other
+                </h3>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full border border-gold/20 bg-gold/10 flex items-center justify-center text-gold"
               >
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
-          </div>
+
+            <div class="service-row py-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Vitamin</h4>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">5k</span>
+            </div>
+            <div class="service-row pt-4 flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-serif text-xl text-white">Hairwash Only</h4>
+              </div>
+              <span class="font-serif text-xl text-gold whitespace-nowrap">15k</span>
+            </div>
+          </article>
         </div>
 
-        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="500">
           <a
             href="https://wa.me/628119950205"
             target="_blank"
             class="inline-flex items-center gap-2 text-gold hover:text-white transition-colors font-medium border-b border-gold pb-1"
           >
-            Lihat Menu Lengkap & Paket
+            Booking layanan favorit Anda
             <i class="fa-solid fa-arrow-right text-sm"></i>
           </a>
         </div>
